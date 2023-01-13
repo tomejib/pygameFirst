@@ -1,10 +1,8 @@
-#imports pygame library
-from time import sleep
-import pygame
+
+from time import sleep #from time  impotts the sleep library
+import pygame #imports pygame library
+
 pygame.init()#intaling py game
-
-
-
 
 def main():
     
