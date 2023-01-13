@@ -13,6 +13,7 @@ def main():
     
     # Fill the background with white
     screen.fill((255, 255, 255))
+    screen.fill("white")
     
     
     #drawing
@@ -22,25 +23,42 @@ def main():
    
     #add text
     font = pygame.font.SysFont(None, 20)
-    img = font.render('sound', True, "white")
-    screen.blit(img, (5, 5))
+    text_put = font.render('sound', True, "white")
+    screen.blit(text_put, (5, 5))
     
-    
+    #music 
     soundObj = pygame.mixer.Sound('punch.wav')
 
-    # Run until the user asks to quit
-    running = True
     
-    #vhange now to gray
+    
+    #change now to gray
     change = True 
-    while running:
+    while True:
         
         for event in pygame.event.get(): #alll events
+            
             if event.type == pygame.QUIT: #quit
-                running = False
+                pass
+            
+            #mouse chek
+            #pos[0] זה מיקום האופקי של העבר
+            #pos[1] זה מיקום האנכי של העבר
+            if event.type == pygame.MOUSEBUTTONUP:
+                pos = pygame.mouse.get_pos()
+                
+                if 150 < pos[0] < 350 and 150 < pos[1] < 350:    
+                    pass
+                
+                #sounds
+                if 0 < pos[0] < 50 and 0 < pos[1] < 75:
+                    pass
+                
+                ##done this evry time
+                #AD here a commend to do every time yoy change thomthink
+                print(pos)
             
             
-        
+        #bring all the chges you make in grafich to the screen
         pygame.display.flip()
        
 
