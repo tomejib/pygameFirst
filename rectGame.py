@@ -35,5 +35,14 @@ class Rect(shape):
         return self._border
 
     # is value in
-    def inArea(self, x, y):
-        return self.x <= x <= self.x + self.width and self.y <= y <= self.y + self.height
+    def inArea(self, point):
+        return self._x <= point[0] <= self._x + self._width and self._y <= point[1] <= self._y + self._height
+    
+    #adds text to area
+    def addText(self, text , size, color):
+        font = pygame.font.SysFont(None, size)
+        text_put = font.render(text, True, color) 
+        self._screen.blit(text_put, (self._x + (self._width) / 4  , self._y + self._height  / 2))
+       
+    def __str__(self):
+        return f"color + {self._color}, x : {self._x}, y : {self._y}, screen + {self._screen}, width : {self._width}, height : {self._height}, border : {self._border}"

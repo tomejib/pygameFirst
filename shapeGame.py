@@ -21,6 +21,6 @@ class shape(ABC):
     
     
     def __str__(self):
-        return "x : %{self.x}, y : %{self.y}, in screen: %{self.screen}"
+        return f"x : {self.x}, y : {self.y}, in screen: {self.screen}"
     
 

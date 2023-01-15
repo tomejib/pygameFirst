@@ -1,6 +1,5 @@
 # imports pygame library
 from time import sleep
-from rectGame import Rect
 import pygame
 pygame.init()  # intaling py game
 
@@ -15,8 +14,6 @@ def main():
     # Fill the background with white
     screen.fill((255, 255, 255))
 
-    a = Rect("white",5,5,screen, 55, 55, 0)
-    
     # drawing
     # Draw a black rectangle in the chanter
     pygame.draw.rect(screen, "black", [150, 150, 200, 200])
@@ -40,19 +37,16 @@ def main():
     change = True
     while running:
         for event in pygame.event.get():  # alll events
-            
+
             if event.type == pygame.QUIT:  # quit
                 running = False
 
-            
             # event clicked
             if event.type == pygame.MOUSEBUTTONUP:
                 pos = pygame.mouse.get_pos()
-                
+
                 if 150 < pos[0] < 350 and 150 < pos[1] < 350:
-                    
-                    
-                
+
                     if (change):  # draw gray rectangle
                         pygame.draw.rect(screen, "gray", [150, 150, 200, 200])
                         change = False
@@ -67,7 +61,7 @@ def main():
                     pygame.draw.polygon(
                         screen, "green", ((0, 0), (0, 50), (25, 75), (50, 50), (50, 0)))
                     pygame.display.flip()
-                    soundObj.play()#playing sound
+                    soundObj.play()  # playing sound
                     sleep(0.5)
                     # Draw a blue polygon in corner
                     pygame.draw.polygon(
@@ -76,7 +70,7 @@ def main():
 
                 # Draw a red blue circle in the center
                 pygame.draw.circle(screen, "red", [255, 255], 3)
-                a.draw()
+
                 print(pos)
 
         pygame.display.flip()
