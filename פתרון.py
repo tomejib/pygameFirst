@@ -36,9 +36,8 @@ def main():
     # vhange now to gray
     change = True
     while running:
-
         for event in pygame.event.get():  # alll events
-            
+
             if event.type == pygame.QUIT:  # quit
                 running = False
 
@@ -62,7 +61,7 @@ def main():
                     pygame.draw.polygon(
                         screen, "green", ((0, 0), (0, 50), (25, 75), (50, 50), (50, 0)))
                     pygame.display.flip()
-                    soundObj.play()#playing sound
+                    soundObj.play()  # playing sound
                     sleep(0.5)
                     # Draw a blue polygon in corner
                     pygame.draw.polygon(
@@ -71,6 +70,7 @@ def main():
 
                 # Draw a red blue circle in the center
                 pygame.draw.circle(screen, "red", [255, 255], 3)
+
                 print(pos)
 
         pygame.display.flip()
